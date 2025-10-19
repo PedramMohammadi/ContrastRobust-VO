@@ -1,6 +1,6 @@
 # Results
 
-This page reports evaluation results for inserting a pre-processing stage before VO to improve robustness under extreme contrast. We evaluate on **EuRoC MAV** and **TUM RGB-D** with **ORB-SLAM3 (mono)**, using **APE (Sim3, translation)** and **RPE (Δ=5 frames)**. All variants preserve filenames/timestamps so VO timing is unchanged.
+This page reports evaluation results for inserting a pre-processing stage before VO to improve robustness under extreme contrast. I evaluate on **EuRoC MAV** and **TUM RGB-D** with **ORB-SLAM3 (mono)**, using **APE (Sim3, translation)** and **RPE (Δ=5 frames)**. All variants preserve filenames/timestamps so VO timing is unchanged.
 
 ## TL;DR
 
@@ -15,13 +15,11 @@ This page reports evaluation results for inserting a pre-processing stage before
 - **Metrics:**  
   - **APE (Sim3, translation)** — long-term drift  
   - **RPE (Δ=5 frames, translation)** — short-term consistency
-- **Aggregation:** For each `sequence × metric`, we compute % change vs **baseline** (no preproc):  
-  \[
-  \% \Delta = \frac{\text{RMSE}_{\text{variant}} - \text{RMSE}_{\text{baseline}}}{\text{RMSE}_{\text{baseline}}}\times 100.
-  \]
-  We report the **median** across sequences and a **win-rate** = % of sequences with at least **5%** improvement (i.e., %Δ ≤ −5%).
+- **Aggregation:** For each `sequence × metric`, I compute % change vs **baseline** (no pre-processing):
 
-> Exact CSVs and plotting scripts are listed at the end.  
+  ![eq](https://latex.codecogs.com/svg.image?\%\Delta=\frac{\mathrm{RMSE}_{\mathrm{variant}}-\mathrm{RMSE}_{\mathrm{baseline}}}{\mathrm{RMSE}_{\mathrm{baseline}}}\times100)
+
+  I report the **median** across sequences and a **win-rate** = % of sequences with at least **5%** improvement (i.e., %Δ ≤ −5%).
 
 ---
 
